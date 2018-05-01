@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-ts",
-  "version": "1.0.0",
-  "description": "typescript starter",
+  "name": "reducer-tools",
+  "version": "0.1.0",
+  "description": "redux reducer utilities",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -22,12 +22,13 @@
   "author": "Yulong Ruan <ruanyu1@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "typescript"
+    "redux",
+    "reducer"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ruanyl/boilerplate-ts.git"
+    "url": "https://github.com/ruanyl/reducer-tools.git"
   },
-  "homepage": "https://github.com/ruanyl/boilerplate-ts",
-  "bugs": "https://github.com/ruanyl/boilerplate-ts/issues"
+  "homepage": "https://github.com/ruanyl/reducer-tools",
+  "bugs": "https://github.com/ruanyl/reducer-tools/issues"
 }
