@@ -1,11 +1,14 @@
-import { AnyAction, Reducer } from 'redux'
-
+export interface AnyAction {
+  type: string;
+  [key: string]: any;
+}
 export type State = any
+export type Reducer = (state: State, action: AnyAction) => State;
 export interface ReducerMap {
   [key: string]: Reducer
 }
-export type FunctionalReducer = (v: any) => (s: State) => State
-export type TransformFunction = (a: AnyAction) => any
+type FunctionalReducer = (v: any) => (s: State) => State
+type TransformFunction = (a: AnyAction) => any
 
 export const createReducer = (initialState: State, reducerMap: ReducerMap) => {
   return (state: State = initialState, action: AnyAction) => {

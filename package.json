@@ -1,6 +1,6 @@
 {
   "name": "reducer-tools",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "redux reducer utilities",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -17,9 +17,7 @@
     "ts-jest": "^22.4.4",
     "typescript": "^2.8.3"
   },
-  "dependencies": {
-    "@types/redux": "^3.6.0"
-  },
+  "dependencies": {},
   "peerDependencies": {},
   "author": "Yulong Ruan <ruanyu1@gmail.com>",
   "license": "MIT",
