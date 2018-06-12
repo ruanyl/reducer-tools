@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "strictNullChecks": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -12,5 +12,8 @@
   },
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
   ]
 }

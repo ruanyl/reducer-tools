@@ -1,23 +1,24 @@
-export interface Action {
-  type: string;
-}
+import { AnyAction, Reducer } from 'redux'
 
-export interface Handlers {
-  [key: string]: (s: any, a: Action) => any
+export type State = any
+export interface ReducerMap {
+  [key: string]: Reducer
 }
+export type FunctionalReducer = (v: any) => (s: State) => State
+export type TransformFunction = (a: AnyAction) => any
 
-export const createReducer = (initialState: any, handlers: Handlers) => {
-  return (state = initialState, action: Action) => {
-    if (handlers.hasOwnProperty(action.type)) {
-      return handlers[action.type](state, action)
+export const createReducer = (initialState: State, reducerMap: ReducerMap) => {
+  return (state: State = initialState, action: AnyAction) => {
+    if (reducerMap.hasOwnProperty(action.type)) {
+      return reducerMap[action.type](state, action)
     } else {
       return state
     }
   }
 }
 
-const prop = p => o => o[p]
-export const transformReducer = transform => reducer => (s, a) => reducer(transform(a))(s)
-export const propReducer = p => transformReducer(prop(p))
+const prop = (p: string) => (o: any) => o[p]
+export const transformReducer = (transform: TransformFunction) => (reducer: FunctionalReducer) => (s: State, a: AnyAction) => reducer(transform(a))(s)
+export const propReducer = (p: string) => transformReducer(prop(p))
 export const payloadReducer = propReducer('payload')
 export const valueReducer = propReducer('value')
