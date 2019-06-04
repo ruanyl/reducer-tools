@@ -1,4 +1,4 @@
-type Mirrored<T extends Record<string, any>> = {
+export type Mirrored<T extends Record<string, any>> = {
   [K in keyof T]: K
 }
 
